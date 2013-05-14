@@ -8,9 +8,6 @@ Proyecto Final DEW A41A
  Integrantes              Usuario Google              Usuario Github
  
  Jiam Zapata            jiam.jual@gmail.com           jiamzapata
- 
  Felix Holguin          fholguinj@gmail.com           fholguin
- 
  Gustavo Chalco         gchalcoa@gmail.com            umabiel
- 
  Mario Arce             maarce20@gmail.com            maarce20
