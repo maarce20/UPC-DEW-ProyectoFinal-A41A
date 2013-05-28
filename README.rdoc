@@ -1,10 +1,19 @@
 == Pasos para clonar el repositorio en las maquinas locales y subirlas al GIT
 
 
-Primero entrar en el directorio <tt>c:\Sites> </tt> mediante la consola y ejecutar
+Primero, entrar en el directorio <tt>c:\Sites> </tt> mediante la consola y ejecutar
 el siguiente comando.
-       <tt>git clone https://github.com/maarce20/UPC-DEW-ProyectoFinal-A41A.git</tt>
+       #>git clone https://github.com/maarce20/UPC-DEW-ProyectoFinal-A41A.git [NOMBRE_DE_CARPETA_OPCIONAL]
 
+Segundo, ingresar a la carpeta creada <tt>c:\Sites\>cd UPC-DEW-ProyectoFinal-A41A</tt> y ejecutar
+los comandos:
+       #>git remote -v
+Para verificar el resultado deberia ser algo parecido a esto:
+       origin  https://github.com/maarce20/UPC-DEW-ProyectoFinal-A41A.git (fetch)
+       origin  https://github.com/maarce20/UPC-DEW-ProyectoFinal-A41A.git (push)
+
+Tercero, despues de haber terminado de realizar los cambios, se validan con el comando:
+       #>git status
 
 == Getting Started
 
