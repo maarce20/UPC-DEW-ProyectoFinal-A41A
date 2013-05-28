@@ -3,7 +3,7 @@
 
 Primero entrar en el directorio <tt>c:\Sites> </tt> mediante la consola y ejecutar
 el siguiente comando.
-<tt>git clone https://github.com/maarce20/UPC-DEW-ProyectoFinal-A41A.git</tt>
+       <tt>git clone https://github.com/maarce20/UPC-DEW-ProyectoFinal-A41A.git</tt>
 
 
 == Getting Started
