@@ -38,3 +38,7 @@ Terminado el proceso, se puede seguir con el desarrollo normal del proyecto y pa
 pasos del tutorial anterior comenzando desde el segundo.
 
 
+Nota: 
+ Entre el segundo y tercer paso, siempre deben de ejecutar dentro de la carpeta de trabajo <tt>c:\Sites\UPC-DEW-ProyectoFinal-A41A></tt>
+       #>bundle install
+Esto para instalar cualquier gema que se haya agregado en el archivo <tt>Gemfile</tt>
