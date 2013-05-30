@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type person:</b>
+  <%= @user.type_person %>
+</p>
+
+<p>
+  <b>Name user:</b>
+  <%= @user.name_user %>
+</p>
+
+<p>
+  <b>Primary last name:</b>
+  <%= @user.primary_last_name %>
+</p>
+
+<p>
+  <b>Second last name:</b>
+  <%= @user.second_last_name %>
+</p>
+
+<p>
+  <b>Sex:</b>
+  <%= @user.sex %>
+</p>
+
+<p>
+  <b>Type document:</b>
+  <%= @user.type_document %>
+</p>
+
+<p>
+  <b>Number document:</b>
+  <%= @user.number_document %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @user.email %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @user.password %>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
