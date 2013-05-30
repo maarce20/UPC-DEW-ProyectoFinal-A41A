@@ -10,6 +10,7 @@ gem 'sqlite3'
 # Gemas para el proyecto
 gem 'gmaps4rails'
 gem 'activeadmin'
+gem "simple_form", "~> 2.1.0"
 
 
 
