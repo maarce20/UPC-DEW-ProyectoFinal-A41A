@@ -1,3 +1,7 @@
+== Bitacora
+       https://docs.google.com/spreadsheet/ccc?key=0Aiwwon9D4ekgdHVHNGhXRjVUS2V3RlRTQUdacXRaTUE#gid=0
+
+
 == Pasos para clonar el repositorio en las maquinas locales y subirlas al GIT
 
 
@@ -39,6 +43,6 @@ pasos del tutorial anterior comenzando desde el segundo.
 
 
 Nota: 
- Entre el segundo y tercer paso, siempre deben de ejecutar dentro de la carpeta de trabajo <tt>c:\Sites\UPC-DEW-ProyectoFinal-A41A></tt>
+Entre el segundo y tercer paso, siempre deben de ejecutar dentro de la carpeta de trabajo <tt>c:\Sites\UPC-DEW-ProyectoFinal-A41A></tt>
        #>bundle install
 Esto para instalar cualquier gema que se haya agregado en el archivo <tt>Gemfile</tt>
