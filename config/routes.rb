@@ -1,4 +1,13 @@
 Proyfinal::Application.routes.draw do
+  resources :user_musical_groups
+
+
+  resources :musical_groups
+
+
+  resources :music_styles
+
+
   resources :users
 
 

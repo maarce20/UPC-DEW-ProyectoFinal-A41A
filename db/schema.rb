@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130530045120) do
+ActiveRecord::Schema.define(:version => 20130601204958) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -56,6 +56,28 @@ ActiveRecord::Schema.define(:version => 20130530045120) do
     t.boolean  "gmaps"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "music_styles", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "musical_groups", :force => true do |t|
+    t.string   "name"
+    t.integer  "music_style_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  add_index "musical_groups", ["music_style_id"], :name => "index_musical_groups_on_music_style_id"
+
+  create_table "user_musical_groups", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "musical_group_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "users", :force => true do |t|
