@@ -4,4 +4,8 @@
 
 require File.expand_path('../config/application', __FILE__)
 
+<<<<<<< HEAD
 Proyfinal::Application.load_tasks
+=======
+FinalProject::Application.load_tasks
+>>>>>>> origin/jiamzapata

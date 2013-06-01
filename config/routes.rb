@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Proyfinal::Application.routes.draw do
   resources :users
 
@@ -6,6 +7,13 @@ Proyfinal::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   resources :locals
+=======
+FinalProject::Application.routes.draw do
+  root :to => "musical_groups#index"
+  resources :user_musical_groups
+  resources :musical_groups
+  resources :music_styles
+>>>>>>> origin/jiamzapata
 
 
   # The priority is based upon order of creation:

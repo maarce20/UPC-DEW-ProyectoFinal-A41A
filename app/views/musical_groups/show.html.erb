@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @musical_group.name %>
+</p>
+
+<p>
+  <b>Music style:</b>
+  <%= @musical_group.music_style %>
+</p>
+
+
+<%= link_to 'Edit', edit_musical_group_path(@musical_group) %> |
+<%= link_to 'Back', musical_groups_path %>

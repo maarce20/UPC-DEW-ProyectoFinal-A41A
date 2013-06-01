@@ -7,6 +7,7 @@ gem 'rails', '3.2.13'
 
 gem 'sqlite3'
 
+<<<<<<< HEAD
 # Gemas para el proyecto
 gem 'gmaps4rails'
 gem 'activeadmin'
@@ -14,6 +15,8 @@ gem "simple_form", "~> 2.1.0"
 
 
 
+=======
+>>>>>>> origin/jiamzapata
 
 # Gems used only for assets and not required
 # in production environments by default.

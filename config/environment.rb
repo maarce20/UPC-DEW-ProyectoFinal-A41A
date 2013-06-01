@@ -2,4 +2,8 @@
 require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
+<<<<<<< HEAD
 Proyfinal::Application.initialize!
+=======
+FinalProject::Application.initialize!
+>>>>>>> origin/jiamzapata
