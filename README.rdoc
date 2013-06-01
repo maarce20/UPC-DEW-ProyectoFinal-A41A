@@ -1,0 +1,48 @@
+== Bitacora
+       https://docs.google.com/spreadsheet/ccc?key=0Aiwwon9D4ekgdHVHNGhXRjVUS2V3RlRTQUdacXRaTUE#gid=0
+
+
+== Pasos para clonar el repositorio en las maquinas locales y subirlas al GIT
+
+
+Primero, entrar en el directorio <tt>c:\Sites> </tt> mediante la consola y ejecutar
+el siguiente comando.
+       #>git clone https://github.com/maarce20/UPC-DEW-ProyectoFinal-A41A.git [NOMBRE_DE_CARPETA_OPCIONAL]
+
+Segundo, ingresar a la carpeta creada <tt>c:\Sites\>cd UPC-DEW-ProyectoFinal-A41A</tt> y ejecutar
+los comandos:
+       #>git remote -v
+Para verificar el resultado deberia ser algo parecido a esto:
+       origin  https://github.com/maarce20/UPC-DEW-ProyectoFinal-A41A.git (fetch)
+       origin  https://github.com/maarce20/UPC-DEW-ProyectoFinal-A41A.git (push)
+
+Tercero, despues de haber terminado de realizar los cambios, se validan con el comando:
+       #>git status
+
+Cuarto, se agregan al repositorio local:
+       #>git add .
+
+Quinto, se realiza el commit para ponerlo en el repositorio local
+       #>git commit -m "MENSAJE_INFORMATIVO"
+
+Sexto, se realiza el push, esto envia los cambios realizados al repositorio remoto (GIT)
+       #>git push origin master
+<tt>origin</tt> es la rama local desde donde se esta enviando los cambios, y <tt>master</tt> es la rama principal en el 
+repositorio remoto.
+
+Realizado esto, se les solicitara un usuario y contrasenha para validar el envio de los archivos al repositorio.
+
+== Pasos para continuar con el desarrollo desde el GitHub
+
+Mediante consola, se debe ingresar en la carpeta de trabajo en este caso <tt>c:\Sites\UPC-DEW-ProyectoFinal-A41A></tt>
+para recuperar todos los cambios que se hayan podido generar desde el ultimo <tt>commit/push</tt> al repositorio remoto
+       #>git pull
+
+Terminado el proceso, se puede seguir con el desarrollo normal del proyecto y para su envio se realizan los mismos
+pasos del tutorial anterior comenzando desde el segundo.
+
+
+Nota: 
+Entre el segundo y tercer paso, siempre deben de ejecutar dentro de la carpeta de trabajo <tt>c:\Sites\UPC-DEW-ProyectoFinal-A41A></tt>
+       #>bundle install
+Esto para instalar cualquier gema que se haya agregado en el archivo <tt>Gemfile</tt>

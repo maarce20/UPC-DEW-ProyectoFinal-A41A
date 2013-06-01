@@ -1,0 +1,68 @@
+<div class="comment">
+<%= simple_form_for(@user) do |f| %>
+  <%= f.label :name_user, 'Nombre de Usuario' %><br />
+  <%= f.input :name_user, label: false, input_html: { placeholder: 'Ingrese nombre' } %>
+  
+  <%= f.button :submit %>
+<% end %>
+</div>
+
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="comment">
+    <div class="field">
+      <%= f.label :type_person %><br />
+      <%= f.radio_button :type_person, 'Alumno', :checked => true %>
+      <%= f.label :type_person_alumno, 'Alumno' %>
+
+      <%= f.radio_button :type_person, 'Usuario' %>
+      <%= f.label :type_person_usuario, 'Usuario' %>
+    </div>
+    
+    <div class="field">
+      <%= f.label :name_user, 'Nombre de Usuario' %><br />
+      <%= f.text_field :name_user %>
+    </div>
+    <div class="field">
+      <%= f.label :primary_last_name, 'Apellido Paterno' %><br />
+      <%= f.text_field :primary_last_name %>
+    </div>
+    <div class="field">
+      <%= f.label :second_last_name, 'Apellido Materno' %><br />
+      <%= f.text_field :second_last_name %>
+    </div>
+    <div class="field">
+      <%= f.label :sex, 'Sexo' %><br />
+      <%= f.text_field :sex %>
+    </div>
+    <div class="field">
+      <%= f.label :type_document %><br />
+      <%= f.text_field :type_document %>
+    </div>
+    <div class="field">
+      <%= f.label :number_document, 'Nro. Documento' %><br />
+      <%= f.number_field :number_document %>
+    </div>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.text_field :email %>
+    </div>
+    <div class="field">
+      <%= f.label :password %><br />
+      <%= f.text_field :password %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>
