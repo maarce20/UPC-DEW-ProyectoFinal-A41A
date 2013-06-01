@@ -1,0 +1,1246 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (49.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (65.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateMusicStyles (20130531051742)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "music_styles" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130531051742')[0m
+  [1m[35m (76.0ms)[0m  commit transaction
+Migrating to CreateMusicalGroups (20130531051857)
+  [1m[36m (1.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "musical_groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "music_style_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.0ms)[0m  [1mCREATE INDEX "index_musical_groups_on_music_style_id" ON "musical_groups" ("music_style_id")[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130531051857')
+  [1m[36m (68.0ms)[0m  [1mcommit transaction[0m
+Migrating to CreateUserMusicalGroups (20130531052222)
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (2.0ms)[0m  [1mCREATE TABLE "user_musical_groups" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "musical_group_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130531052222')
+  [1m[36m (76.0ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateMusicStyles (20130531051742)
+Migrating to CreateMusicalGroups (20130531051857)
+Migrating to CreateUserMusicalGroups (20130531052222)
+  [1m[35m (1.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-31 00:31:47 -0500
+Processing by MusicalGroupsController#index as HTML
+  [1m[36mMusicalGroup Load (0.0ms)[0m  [1mSELECT "musical_groups".* FROM "musical_groups" [0m
+  Rendered musical_groups/index.html.erb within layouts/application (30.0ms)
+Compiled music_styles.css  (34ms)  (pid 1316)
+Compiled musical_groups.css  (1ms)  (pid 1316)
+Compiled scaffolds.css  (11ms)  (pid 1316)
+Compiled user_musical_groups.css  (0ms)  (pid 1316)
+Compiled application.css  (116ms)  (pid 1316)
+Compiled jquery.js  (6ms)  (pid 1316)
+Compiled jquery_ujs.js  (2ms)  (pid 1316)
+Compiled music_styles.js  (1186ms)  (pid 1316)
+Compiled musical_groups.js  (179ms)  (pid 1316)
+Compiled user_musical_groups.js  (143ms)  (pid 1316)
+Compiled application.js  (2312ms)  (pid 1316)
+Completed 200 OK in 3247ms (Views: 3033.2ms | ActiveRecord: 37.0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:31:51 -0500
+Served asset /scaffolds.css - 304 Not Modified (291ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:31:52 -0500
+Served asset /music_styles.css - 304 Not Modified (68ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:31:52 -0500
+Served asset /musical_groups.css - 304 Not Modified (85ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:31:52 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (54ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:31:52 -0500
+Served asset /application.css - 304 Not Modified (55ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-31 00:31:52 -0500
+Served asset /jquery.js - 200 OK (113ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-31 00:31:52 -0500
+Served asset /jquery_ujs.js - 200 OK (168ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:31:52 -0500
+Served asset /music_styles.js - 304 Not Modified (165ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:31:53 -0500
+Served asset /musical_groups.js - 304 Not Modified (215ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:31:53 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (208ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:31:53 -0500
+Served asset /application.js - 304 Not Modified (199ms)
+
+
+Started GET "/music_styles" for 127.0.0.1 at 2013-05-31 00:32:26 -0500
+Processing by MusicStylesController#index as HTML
+  [1m[35mMusicStyle Load (0.0ms)[0m  SELECT "music_styles".* FROM "music_styles" 
+  Rendered music_styles/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:32:26 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:32:26 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:32:26 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:32:26 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:32:26 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:32:26 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:32:26 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:32:26 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:32:26 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/music_styles/new" for 127.0.0.1 at 2013-05-31 00:32:38 -0500
+Processing by MusicStylesController#new as HTML
+  Rendered music_styles/_form.html.erb (56.0ms)
+  Rendered music_styles/new.html.erb within layouts/application (100.0ms)
+Completed 200 OK in 123ms (Views: 116.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:32:39 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:32:39 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:32:39 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:32:39 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:32:39 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:32:39 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:32:39 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:32:39 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:32:39 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/music_styles" for 127.0.0.1 at 2013-05-31 00:33:05 -0500
+Processing by MusicStylesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lmV1MfhYJFnwLkN3EKKfRAdcZb4viNjc34fCJbPf7uM=", "music_style"=>{"name"=>"Latin"}, "commit"=>"Create Music style"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (64.0ms)[0m  INSERT INTO "music_styles" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Fri, 31 May 2013 05:33:05 UTC +00:00], ["name", "Latin"], ["updated_at", Fri, 31 May 2013 05:33:05 UTC +00:00]]
+  [1m[36m (52.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/music_styles/1
+Completed 302 Found in 121ms (ActiveRecord: 116.0ms)
+
+
+Started GET "/music_styles/1" for 127.0.0.1 at 2013-05-31 00:33:05 -0500
+Processing by MusicStylesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMusicStyle Load (1.0ms)[0m  SELECT "music_styles".* FROM "music_styles" WHERE "music_styles"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered music_styles/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 27ms (Views: 23.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:05 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:05 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:06 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:06 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:06 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:06 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:06 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:06 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:06 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/music_styles" for 127.0.0.1 at 2013-05-31 00:33:08 -0500
+Processing by MusicStylesController#index as HTML
+  [1m[36mMusicStyle Load (0.0ms)[0m  [1mSELECT "music_styles".* FROM "music_styles" [0m
+  Rendered music_styles/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 19ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:08 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:08 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:08 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:08 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:08 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:08 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:08 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:08 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:08 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/music_styles/new" for 127.0.0.1 at 2013-05-31 00:33:10 -0500
+Processing by MusicStylesController#new as HTML
+  Rendered music_styles/_form.html.erb (2.0ms)
+  Rendered music_styles/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 39ms (Views: 38.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:10 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:10 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:10 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:10 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:10 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:10 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:10 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:11 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:11 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/music_styles" for 127.0.0.1 at 2013-05-31 00:33:16 -0500
+Processing by MusicStylesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lmV1MfhYJFnwLkN3EKKfRAdcZb4viNjc34fCJbPf7uM=", "music_style"=>{"name"=>"Pop"}, "commit"=>"Create Music style"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (2.0ms)[0m  [1mINSERT INTO "music_styles" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Fri, 31 May 2013 05:33:16 UTC +00:00], ["name", "Pop"], ["updated_at", Fri, 31 May 2013 05:33:16 UTC +00:00]]
+  [1m[35m (65.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/music_styles/2
+Completed 302 Found in 70ms (ActiveRecord: 67.0ms)
+
+
+Started GET "/music_styles/2" for 127.0.0.1 at 2013-05-31 00:33:16 -0500
+Processing by MusicStylesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMusicStyle Load (0.0ms)[0m  [1mSELECT "music_styles".* FROM "music_styles" WHERE "music_styles"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered music_styles/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:16 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:16 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:16 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:16 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:16 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:16 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:16 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:16 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:16 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/music_styles" for 127.0.0.1 at 2013-05-31 00:33:18 -0500
+Processing by MusicStylesController#index as HTML
+  [1m[35mMusicStyle Load (1.0ms)[0m  SELECT "music_styles".* FROM "music_styles" 
+  Rendered music_styles/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:18 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:18 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:18 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:18 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:18 -0500
+Served asset /music_styles.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:18 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:18 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:18 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:19 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/music_styles/new" for 127.0.0.1 at 2013-05-31 00:33:20 -0500
+Processing by MusicStylesController#new as HTML
+  Rendered music_styles/_form.html.erb (3.0ms)
+  Rendered music_styles/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 24ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:20 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:20 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:20 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:20 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:20 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:20 -0500
+Served asset /musical_groups.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:20 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:21 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:21 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/music_styles" for 127.0.0.1 at 2013-05-31 00:33:24 -0500
+Processing by MusicStylesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lmV1MfhYJFnwLkN3EKKfRAdcZb4viNjc34fCJbPf7uM=", "music_style"=>{"name"=>"Rock"}, "commit"=>"Create Music style"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "music_styles" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Fri, 31 May 2013 05:33:24 UTC +00:00], ["name", "Rock"], ["updated_at", Fri, 31 May 2013 05:33:24 UTC +00:00]]
+  [1m[36m (66.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/music_styles/3
+Completed 302 Found in 69ms (ActiveRecord: 67.0ms)
+
+
+Started GET "/music_styles/3" for 127.0.0.1 at 2013-05-31 00:33:24 -0500
+Processing by MusicStylesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMusicStyle Load (0.0ms)[0m  SELECT "music_styles".* FROM "music_styles" WHERE "music_styles"."id" = ? LIMIT 1  [["id", "3"]]
+  Rendered music_styles/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:25 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:25 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:25 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:25 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:25 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:25 -0500
+Served asset /music_styles.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:25 -0500
+Served asset /musical_groups.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:25 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:25 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/music_styles" for 127.0.0.1 at 2013-05-31 00:33:28 -0500
+Processing by MusicStylesController#index as HTML
+  [1m[36mMusicStyle Load (0.0ms)[0m  [1mSELECT "music_styles".* FROM "music_styles" [0m
+  Rendered music_styles/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 20ms (Views: 19.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:28 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:28 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:28 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:28 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:28 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:28 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:28 -0500
+Served asset /musical_groups.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:28 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:28 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/music_styles/new" for 127.0.0.1 at 2013-05-31 00:33:30 -0500
+Processing by MusicStylesController#new as HTML
+  Rendered music_styles/_form.html.erb (2.0ms)
+  Rendered music_styles/new.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 21ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:30 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:30 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:30 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:30 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:30 -0500
+Served asset /musical_groups.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:30 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:30 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:31 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:31 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/music_styles" for 127.0.0.1 at 2013-05-31 00:33:36 -0500
+Processing by MusicStylesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lmV1MfhYJFnwLkN3EKKfRAdcZb4viNjc34fCJbPf7uM=", "music_style"=>{"name"=>"Funk"}, "commit"=>"Create Music style"}
+  [1m[35m (1.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "music_styles" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Fri, 31 May 2013 05:33:36 UTC +00:00], ["name", "Funk"], ["updated_at", Fri, 31 May 2013 05:33:36 UTC +00:00]]
+  [1m[35m (57.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/music_styles/4
+Completed 302 Found in 63ms (ActiveRecord: 59.0ms)
+
+
+Started GET "/music_styles/4" for 127.0.0.1 at 2013-05-31 00:33:36 -0500
+Processing by MusicStylesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMusicStyle Load (0.0ms)[0m  [1mSELECT "music_styles".* FROM "music_styles" WHERE "music_styles"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  Rendered music_styles/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:36 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:36 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:36 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:36 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:36 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:36 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:36 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:36 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:36 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:36 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:36 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/music_styles" for 127.0.0.1 at 2013-05-31 00:33:38 -0500
+Processing by MusicStylesController#index as HTML
+  [1m[35mMusicStyle Load (0.0ms)[0m  SELECT "music_styles".* FROM "music_styles" 
+  Rendered music_styles/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:38 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:38 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:38 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:38 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:38 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:38 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:38 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:38 -0500
+Served asset /music_styles.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:38 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:38 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:38 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/music_styles/new" for 127.0.0.1 at 2013-05-31 00:33:39 -0500
+Processing by MusicStylesController#new as HTML
+  Rendered music_styles/_form.html.erb (1.0ms)
+  Rendered music_styles/new.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 18ms (Views: 18.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:40 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:40 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:40 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:40 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:40 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:40 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:40 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:40 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:40 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:40 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:40 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/music_styles" for 127.0.0.1 at 2013-05-31 00:33:44 -0500
+Processing by MusicStylesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lmV1MfhYJFnwLkN3EKKfRAdcZb4viNjc34fCJbPf7uM=", "music_style"=>{"name"=>"Jazz"}, "commit"=>"Create Music style"}
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "music_styles" ("created_at", "name", "updated_at") VALUES (?, ?, ?)  [["created_at", Fri, 31 May 2013 05:33:44 UTC +00:00], ["name", "Jazz"], ["updated_at", Fri, 31 May 2013 05:33:44 UTC +00:00]]
+  [1m[36m (61.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/music_styles/5
+Completed 302 Found in 65ms (ActiveRecord: 62.0ms)
+
+
+Started GET "/music_styles/5" for 127.0.0.1 at 2013-05-31 00:33:45 -0500
+Processing by MusicStylesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mMusicStyle Load (0.0ms)[0m  SELECT "music_styles".* FROM "music_styles" WHERE "music_styles"."id" = ? LIMIT 1  [["id", "5"]]
+  Rendered music_styles/show.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 17ms (Views: 16.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:45 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:45 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:45 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:45 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:45 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:45 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:45 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:45 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:45 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:45 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:45 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/music_styles" for 127.0.0.1 at 2013-05-31 00:33:46 -0500
+Processing by MusicStylesController#index as HTML
+  [1m[36mMusicStyle Load (0.0ms)[0m  [1mSELECT "music_styles".* FROM "music_styles" [0m
+  Rendered music_styles/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:46 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:47 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:47 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:47 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:47 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:47 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:47 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:47 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:47 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:47 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:47 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/music_styles/new" for 127.0.0.1 at 2013-05-31 00:33:49 -0500
+Processing by MusicStylesController#new as HTML
+  Rendered music_styles/_form.html.erb (2.0ms)
+  Rendered music_styles/new.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 24ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:49 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:49 -0500
+Served asset /musical_groups.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:49 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:49 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:49 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:49 -0500
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:49 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:49 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:49 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:49 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:49 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/music_styles" for 127.0.0.1 at 2013-05-31 00:33:53 -0500
+Processing by MusicStylesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lmV1MfhYJFnwLkN3EKKfRAdcZb4viNjc34fCJbPf7uM=", "music_style"=>{"name"=>"Romantic"}, "commit"=>"Create Music style"}
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO "music_styles" ("created_at", "name", "updated_at") VALUES (?, ?, ?)[0m  [["created_at", Fri, 31 May 2013 05:33:53 UTC +00:00], ["name", "Romantic"], ["updated_at", Fri, 31 May 2013 05:33:53 UTC +00:00]]
+  [1m[35m (36.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/music_styles/6
+Completed 302 Found in 42ms (ActiveRecord: 37.0ms)
+
+
+Started GET "/music_styles/6" for 127.0.0.1 at 2013-05-31 00:33:53 -0500
+Processing by MusicStylesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mMusicStyle Load (1.0ms)[0m  [1mSELECT "music_styles".* FROM "music_styles" WHERE "music_styles"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  Rendered music_styles/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 23ms (Views: 22.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:53 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:53 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:53 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:53 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:53 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:53 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:53 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:53 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:54 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:54 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:54 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/music_styles" for 127.0.0.1 at 2013-05-31 00:33:55 -0500
+Processing by MusicStylesController#index as HTML
+  [1m[35mMusicStyle Load (0.0ms)[0m  SELECT "music_styles".* FROM "music_styles" 
+  Rendered music_styles/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 22ms (Views: 20.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:55 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:55 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:55 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:55 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:55 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:33:55 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:55 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:56 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:56 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:56 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:33:56 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2013-05-31 00:34:05 -0500
+Processing by MusicalGroupsController#index as HTML
+  [1m[36mMusicalGroup Load (0.0ms)[0m  [1mSELECT "musical_groups".* FROM "musical_groups" [0m
+  Rendered musical_groups/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 19ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:34:05 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:34:05 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:34:05 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:34:05 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:34:05 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-31 00:34:05 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-31 00:34:05 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:34:05 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:34:05 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:34:05 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:34:06 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/musical_groups/new" for 127.0.0.1 at 2013-05-31 00:34:08 -0500
+Processing by MusicalGroupsController#new as HTML
+  Rendered musical_groups/_form.html.erb (93.0ms)
+  Rendered musical_groups/new.html.erb within layouts/application (97.0ms)
+Completed 200 OK in 123ms (Views: 115.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:34:08 -0500
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:34:08 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:34:08 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:34:08 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:34:08 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-31 00:34:08 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-31 00:34:08 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:34:08 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:34:09 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:34:09 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:34:09 -0500
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/musical_groups/new" for 127.0.0.1 at 2013-05-31 00:35:49 -0500
+Processing by MusicalGroupsController#new as HTML
+  Rendered musical_groups/_form.html.erb (77.0ms)
+  Rendered musical_groups/new.html.erb within layouts/application (79.0ms)
+Completed 500 Internal Server Error in 88ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Music_style):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= f.label :music_style %><br />
+    20:     <%= f.collection_select :music_style_id, Music_style.all, :id, :name, :prompt => true %>
+    21: 
+    22:   </div>
+    23:   <div class="actions">
+  app/views/musical_groups/_form.html.erb:20:in `block in _app_views_musical_groups__form_html_erb__380043968_28112232'
+  app/views/musical_groups/_form.html.erb:1:in `_app_views_musical_groups__form_html_erb__380043968_28112232'
+  app/views/musical_groups/new.html.erb:3:in `_app_views_musical_groups_new_html_erb___26491282_27376644'
+  app/controllers/musical_groups_controller.rb:29:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (56.0ms)
+
+
+Started GET "/musical_groups/new" for 127.0.0.1 at 2013-05-31 00:35:59 -0500
+Processing by MusicalGroupsController#new as HTML
+  Rendered musical_groups/_form.html.erb (11.0ms)
+  Rendered musical_groups/new.html.erb within layouts/application (14.0ms)
+Completed 500 Internal Server Error in 22ms
+
+ActionView::Template::Error (uninitialized constant ActionView::CompiledTemplates::Music_Style):
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= f.label :music_style %><br />
+    20:     <%= f.collection_select :music_style_id, Music_Style.all, :id, :name, :prompt => true %>
+    21: 
+    22:   </div>
+    23:   <div class="actions">
+  app/views/musical_groups/_form.html.erb:20:in `block in _app_views_musical_groups__form_html_erb__380043968_29391300'
+  app/views/musical_groups/_form.html.erb:1:in `_app_views_musical_groups__form_html_erb__380043968_29391300'
+  app/views/musical_groups/new.html.erb:3:in `_app_views_musical_groups_new_html_erb___26491282_27376644'
+  app/controllers/musical_groups_controller.rb:29:in `new'
+
+
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered C:/RailsInstaller/Ruby1.9.3/lib/ruby/gems/1.9.1/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (36.0ms)
+
+
+Started GET "/musical_groups/new" for 127.0.0.1 at 2013-05-31 00:37:07 -0500
+Processing by MusicalGroupsController#new as HTML
+  [1m[35mMusicStyle Load (0.0ms)[0m  SELECT "music_styles".* FROM "music_styles" 
+  Rendered musical_groups/_form.html.erb (4.0ms)
+  Rendered musical_groups/new.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 44ms (Views: 43.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:37:07 -0500
+Served asset /musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-05-31 00:37:07 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2013-05-31 00:37:07 -0500
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.css?body=1" for 127.0.0.1 at 2013-05-31 00:37:07 -0500
+Served asset /music_styles.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.css?body=1" for 127.0.0.1 at 2013-05-31 00:37:07 -0500
+Served asset /user_musical_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-05-31 00:37:08 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-05-31 00:37:08 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:37:08 -0500
+Served asset /musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/music_styles.js?body=1" for 127.0.0.1 at 2013-05-31 00:37:08 -0500
+Served asset /music_styles.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_musical_groups.js?body=1" for 127.0.0.1 at 2013-05-31 00:37:08 -0500
+Served asset /user_musical_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-05-31 00:37:08 -0500
+Served asset /application.js - 304 Not Modified (0ms)
