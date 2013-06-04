@@ -21,7 +21,8 @@
   </div>
   <div class="field">
     <%= f.label :district %><br />
-    <%= f.text_field :district %>
+    <!--%= f.text_field :district %>-->
+    <%= f.select :district, options_for_select([["Santiago de Surco", "Santiago de Surco"], ["Monterrico", "Monterrico"],["Barranci", "Barranci"],["Breña", "Breña"],["Comas", "Comas"],["Chorrillosi", "Chorrillos"],["El Agustino", "El Agustino"],["Jesús María", "Jesús María"],["La Molina", "La Molina"],["La Victoria", "La Victoria"],["Magdalena del Mar", "Magdalena del Mar"],["Pueblo Libre", "Pueblo Libre"],["San Isidro", "San Isidro"],["Independencia", "Independencia"],["San Juan de Miraflores", "San Juan de Miraflores"]]) %>
   </div>
   <div class="field">
     <%= f.label :phone %><br />
