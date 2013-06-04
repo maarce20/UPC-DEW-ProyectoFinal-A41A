@@ -1,4 +1,5 @@
 class MusicalGroup < ActiveRecord::Base
   belongs_to :music_style
-  attr_accessible :name , :music_style_id
+  has_many :user_musical_groups
+  has_many :users, :through => :user_musical_groups
 end

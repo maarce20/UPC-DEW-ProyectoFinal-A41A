@@ -12,7 +12,7 @@
 <% @musical_groups.each do |musical_group| %>
   <tr>
     <td><%= musical_group.name %></td>
-    <td><%= musical_group.music_style.name %></td>
+    <td><%= musical_group.music_style %></td>
     <td><%= link_to 'Show', musical_group %></td>
     <td><%= link_to 'Edit', edit_musical_group_path(musical_group) %></td>
     <td><%= link_to 'Destroy', musical_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>

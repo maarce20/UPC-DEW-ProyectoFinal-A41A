@@ -1,15 +1,49 @@
-<%= simple_form_for(@musical_group) do |f| %>
-  <%= f.error_notification %>
+<%= form_for(@musical_group) do |f| %>
+  <% if @musical_group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@musical_group.errors.count, "error") %> prohibited this musical_group from being saved:</h2>
 
-  <div class="form-inputs">
-
-    <%= f.input :name %>
-
-    <%= f.association :music_style %>
-
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
+      <ul>
+      <% @musical_group.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="comment">
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :music_style %><br />
+      <%= f.collection_select :music_style_id, MusicStyle.all, :id, :name, :prompt => true %>
+    </div>
+    <div class="field">
+      <!--<table>
+        <tr>
+          <td>Members</td>
+        </tr>
+        <% @musical_group.users.each do |user| %>
+          <tr>
+            <td>
+              <%= user.name_user %>
+            </td>
+          </tr>
+        <% end %>
+      </table>  -->
+      <table border="1">
+        <%= simple_form_for(@musical_group) do |f| %>
+          <tr>
+            <td>
+              <%= f.association :users, :as => "check_boxes" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </div>
 <% end %>
