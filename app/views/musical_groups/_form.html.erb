@@ -19,10 +19,28 @@
       <%= f.label :music_style %><br />
       <%= f.collection_select :music_style_id, MusicStyle.all, :id, :name, :prompt => true %>
     </div>
-    <div>
-      <%= simple_form_for(@musical_group) do |f| %>
-        <%= f.association :users, :as => "check_boxes" %>
-      <% end %>
+    <div class="field">
+      <!--<table>
+        <tr>
+          <td>Members</td>
+        </tr>
+        <% @musical_group.users.each do |user| %>
+          <tr>
+            <td>
+              <%= user.name_user %>
+            </td>
+          </tr>
+        <% end %>
+      </table>  -->
+      <table border="1">
+        <%= simple_form_for(@musical_group) do |f| %>
+          <tr>
+            <td>
+              <%= f.association :users, :as => "check_boxes" %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
     </div>
     <div class="actions">
       <%= f.submit %>

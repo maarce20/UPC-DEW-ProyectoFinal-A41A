@@ -2,7 +2,6 @@
 
 <table>
   <tr>
-    <th>Fecha</th>
     <th>Fec conc</th>
     <th>Hora ini</th>
     <th>Hora fin</th>
@@ -16,13 +15,12 @@
 
 <% @concerts.each do |concert| %>
   <tr>
-    <td><%= concert.fecha %></td>
     <td><%= concert.fec_conc %></td>
     <td><%= concert.hora_ini %></td>
     <td><%= concert.hora_fin %></td>
-    <td><%= concert.musical_group %></td>
-    <td><%= concert.local %></td>
-    <td><%= concert.user %></td>
+    <td><%= concert.musical_group.name %></td>
+    <td><%= concert.local.name %></td>
+    <td><%= concert.user.name_user %></td>
     <td><%= link_to 'Show', concert %></td>
     <td><%= link_to 'Edit', edit_concert_path(concert) %></td>
     <td><%= link_to 'Destroy', concert, method: :delete, data: { confirm: 'Are you sure?' } %></td>

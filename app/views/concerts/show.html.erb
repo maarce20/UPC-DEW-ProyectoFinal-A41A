@@ -1,11 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Fecha:</b>
-  <%= @concert.fecha %>
-</p>
-
-<p>
   <b>Fec conc:</b>
   <%= @concert.fec_conc %>
 </p>
@@ -22,17 +17,17 @@
 
 <p>
   <b>Musical group:</b>
-  <%= @concert.musical_group %>
+  <%= @concert.musical_group.name %>
 </p>
 
 <p>
   <b>Local:</b>
-  <%= @concert.local %>
+  <%= @concert.local.name %>
 </p>
 
 <p>
   <b>User:</b>
-  <%= @concert.user %>
+  <%= @concert.user.name_user %>
 </p>
 
 

@@ -47,10 +47,9 @@ ActiveRecord::Schema.define(:version => 20130603013428) do
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
   create_table "concerts", :force => true do |t|
-    t.date     "fecha"
     t.date     "fec_conc"
-    t.datetime "hora_ini"
-    t.datetime "hora_fin"
+    t.time     "hora_ini"
+    t.time     "hora_fin"
     t.integer  "musical_group_id"
     t.integer  "local_id"
     t.integer  "user_id"
