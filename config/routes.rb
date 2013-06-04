@@ -1,4 +1,7 @@
 Proyfinal::Application.routes.draw do
+  resources :genders
+
+
   resources :user_musical_groups
 
 
