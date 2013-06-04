@@ -1,20 +1,12 @@
 Proyfinal::Application.routes.draw do
-  resources :user_musical_groups
-
-
-  resources :musical_groups
-
-
-  resources :music_styles
-
-
-  resources :users
-
-
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-
-  resources :locals
+	resources :user_musical_groups
+	resources :concerts
+	resources :musical_groups
+	resources :music_styles
+	resources :users
+	devise_for :admin_users, ActiveAdmin::Devise.config
+	ActiveAdmin.routes(self)
+	resources :locals
 
 
   # The priority is based upon order of creation:
