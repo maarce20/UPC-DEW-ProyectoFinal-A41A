@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601204958) do
+ActiveRecord::Schema.define(:version => 20130603013428) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -45,6 +45,22 @@ ActiveRecord::Schema.define(:version => 20130601204958) do
 
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
+
+  create_table "concerts", :force => true do |t|
+    t.date     "fecha"
+    t.date     "fec_conc"
+    t.datetime "hora_ini"
+    t.datetime "hora_fin"
+    t.integer  "musical_group_id"
+    t.integer  "local_id"
+    t.integer  "user_id"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+  end
+
+  add_index "concerts", ["local_id"], :name => "index_concerts_on_local_id"
+  add_index "concerts", ["musical_group_id"], :name => "index_concerts_on_musical_group_id"
+  add_index "concerts", ["user_id"], :name => "index_concerts_on_user_id"
 
   create_table "locals", :force => true do |t|
     t.string   "name"
