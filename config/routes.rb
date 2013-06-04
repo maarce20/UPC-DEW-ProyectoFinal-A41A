@@ -1,4 +1,7 @@
 Proyfinal::Application.routes.draw do
+  resources :concerts
+
+
   resources :user_musical_groups
 
 
