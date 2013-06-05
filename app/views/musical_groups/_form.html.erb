@@ -10,17 +10,28 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :music_style %><br />
-    <%= f.collection_select :music_style_id, MusicStyle.all, :id, :name, :prompt => true %>
-
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="comment">
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :music_style %><br />
+      <%= f.collection_select :music_style_id, MusicStyle.all, :id, :name, :prompt => true %>
+    </div>
+    <div class="field">
+      <table border="1">
+        <%= simple_form_for(@musical_group) do |f| %>
+          <tr>
+            <td>
+              <%= f.association :users, :as => "check_boxes", label_method: :name_user, value_method: :id, include_blank: false %>
+            </td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
   </div>
 <% end %>

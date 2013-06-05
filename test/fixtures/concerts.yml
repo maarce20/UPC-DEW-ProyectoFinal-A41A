@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fecha: 2013-06-02
+  fec_conc: 2013-06-02
+  hora_ini: 2013-06-02 20:34:28
+  hora_fin: 2013-06-02 20:34:28
+  musical_group: 
+  local: 
+  user: 
+
+two:
+  fecha: 2013-06-02
+  fec_conc: 2013-06-02
+  hora_ini: 2013-06-02 20:34:28
+  hora_fin: 2013-06-02 20:34:28
+  musical_group: 
+  local: 
+  user: 

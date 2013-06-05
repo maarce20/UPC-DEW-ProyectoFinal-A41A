@@ -1,0 +1,50 @@
+<div class="comment">
+<%= simple_form_for(@local) do |f| %>
+  
+ <% if @local.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@local.errors.count, "error") %> prohibited this local from being saved:</h2>
+
+      <ul>
+      <% @local.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+     <%= f.label :name, 'Nombre de Local' %><br />
+    <%= f.input :name, label: false, input_html: { placeholder: 'Ingrese nombre', required: 'required' } %>
+  </div>
+  <div class="field">
+     <%= f.label :address, 'Direccion' %><br />
+    <%= f.input :address, label: false, input_html: { placeholder: 'Ingrese Direccion', required: 'required' } %>
+   </div>
+  <div class="field">
+    <%= f.label :district, 'Direccion' %><br />
+    <!--%= f.text_field :district %>-->
+    <%= f.select :district, options_for_select([["Santiago de Surco", "Santiago de Surco"], ["Monterrico", "Monterrico"],["Barranci", "Barranci"],["Breña", "Breña"],["Comas", "Comas"],["Chorrillosi", "Chorrillos"],["El Agustino", "El Agustino"],["Jesús María", "Jesús María"],["La Molina", "La Molina"],["La Victoria", "La Victoria"],["Magdalena del Mar", "Magdalena del Mar"],["Pueblo Libre", "Pueblo Libre"],["San Isidro", "San Isidro"],["Independencia", "Independencia"],["San Juan de Miraflores", "San Juan de Miraflores"]]) %>
+  </div>
+  <div class="field">
+    
+    <%= f.label :phone %><br />
+    <%= f.input :phone, label: false, input_html: { placeholder: 'Ingrese Telefono'} %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br />
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="field">
+    <%= f.label :gmaps %><br />
+    <%= f.check_box :gmaps %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</div>

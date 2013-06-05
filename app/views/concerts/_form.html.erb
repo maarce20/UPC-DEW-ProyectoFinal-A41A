@@ -1,0 +1,15 @@
+<%= simple_form_for(@concert) do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+    <%= f.input :fec_conc %>
+    <%= f.input :hora_ini %>
+    <%= f.input :hora_fin %>
+    <%= f.association :musical_group %>
+    <%= f.association :local %>
+    <%= f.association :user, label_method: :name_user, value_method: :id, include_blank: false %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
