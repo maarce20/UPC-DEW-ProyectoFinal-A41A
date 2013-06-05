@@ -31,7 +31,7 @@
   <%= f.association :gender, label: false %>
 
   <%= f.label :type_document, 'Tipo de Documento' %><br />
-  <%= f.input :type_document, label: false, input_html: { placeholder: 'Ingrese nombre' } %>
+  <%= f.select :type_document, options_for_select([["DNI","DNI"],["TIU","TIU"]]) %><br /><br />
 
   <%= f.label :number_document, 'Nro. Documento' %><br />
   <%= f.number_field :number_document, label: false, input_html: { placeholder: 'Ingrese Nro Documento' } %><br>

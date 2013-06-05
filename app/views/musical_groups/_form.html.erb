@@ -36,7 +36,7 @@
         <%= simple_form_for(@musical_group) do |f| %>
           <tr>
             <td>
-              <%= f.association :users, :as => "check_boxes" %>
+              <%= f.association :users, :as => "check_boxes", label_method: :name_user, value_method: :id, include_blank: false %>
             </td>
           </tr>
         <% end %>
