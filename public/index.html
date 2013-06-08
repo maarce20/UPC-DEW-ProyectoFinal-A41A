@@ -72,11 +72,14 @@
         },
         autoOpen: false,
         height: 'auto',
-        width: 600,
+        width: 592,
         modal: true,
         resizable: false,
-        close: function() {
-          //console.log('CLOSE');
+        buttons: {
+            "Cerrar": function() {
+              alert('Cerrando =(');
+              $(this).dialog('close');
+            }
         }
       });
 
@@ -116,7 +119,7 @@
 
 .form-2 {
     /* Size and position */
-    width: 440px;
+    width: 550px;
     margin: 60px auto 30px;
     padding: 15px;
     position: relative;
