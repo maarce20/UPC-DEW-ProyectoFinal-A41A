@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <b>Name:</b>
+  <%= @concert.fec_conc %>
+</p>
+
+<p>
   <b>Fec conc:</b>
   <%= @concert.fec_conc %>
 </p>
@@ -28,6 +33,12 @@
 <p>
   <b>User:</b>
   <%= @concert.user.name_user %>
+</p>
+
+<p>
+
+  <%= image_tag @concert.photo_path %>
+
 </p>
 
 

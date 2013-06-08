@@ -2,6 +2,8 @@
 
 <table>
   <tr>
+    <th>Name</th>
+    <th>Extension</th>
     <th>Fec conc</th>
     <th>Hora ini</th>
     <th>Hora fin</th>
@@ -15,6 +17,8 @@
 
 <% @concerts.each do |concert| %>
   <tr>
+    <td><%= concert.name %></td>
+    <td><%= concert.extension %></td>
     <td><%= concert.fec_conc %></td>
     <td><%= concert.hora_ini %></td>
     <td><%= concert.hora_fin %></td>

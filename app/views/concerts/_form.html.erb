@@ -1,4 +1,4 @@
-<%= simple_form_for(@concert) do |f| %>
+<%= simple_form_for(@concert, html: {multipart: true}) do |f| %>
   <%= f.error_notification %>
   <div class="form-inputs">
     <%= f.input :fec_conc %>
@@ -7,6 +7,9 @@
     <%= f.association :musical_group %>
     <%= f.association :local %>
     <%= f.association :user, label_method: :name_user, value_method: :id, include_blank: false %>
+    <%= f.input :name %>
+    <%= f.file_field :photo %>
+  
   </div>
 
   <div class="form-actions">
