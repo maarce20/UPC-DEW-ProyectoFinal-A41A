@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608213914) do
+ActiveRecord::Schema.define(:version => 20130608232204) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -71,6 +71,12 @@ ActiveRecord::Schema.define(:version => 20130608213914) do
   add_index "concerts", ["musical_group_id"], :name => "index_concerts_on_musical_group_id"
   add_index "concerts", ["user_id"], :name => "index_concerts_on_user_id"
 
+  create_table "districts", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "genders", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
@@ -80,13 +86,13 @@ ActiveRecord::Schema.define(:version => 20130608213914) do
   create_table "locals", :force => true do |t|
     t.string   "name"
     t.string   "address"
-    t.string   "district"
     t.string   "phone"
     t.float    "longitude"
     t.float    "latitude"
     t.boolean  "gmaps"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "district_id"
   end
 
   create_table "music_styles", :force => true do |t|

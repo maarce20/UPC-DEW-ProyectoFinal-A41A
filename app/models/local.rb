@@ -1,5 +1,6 @@
 class Local < ActiveRecord::Base
-  attr_accessible :address, :district, :gmaps, :latitude, :longitude, :name, :phone
+  attr_accessible :address, :district, :gmaps, :latitude, :longitude, :name, :phone, :district_id
+  belongs_to :district
   acts_as_gmappable
 
   validates :name, :presence => {:message => "El nombre no puede estar en blanco"},:uniqueness => {:message => "Local ya existe"}
@@ -10,6 +11,6 @@ class Local < ActiveRecord::Base
 def gmaps4rails_address
 $global_variable = 'Lima'
 #describe how to retrieve the address from your model, if you use directly a db column, you can dry your code, see wiki
-    "#{address}, #{district}, #{$global_variable}"
+    "#{address}, #{district.name}, #{$global_variable}"
 end
 end

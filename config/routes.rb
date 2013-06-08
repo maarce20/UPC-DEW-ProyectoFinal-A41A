@@ -1,4 +1,7 @@
 Proyfinal::Application.routes.draw do
+  resources :districts
+
+
   resources :comments
 
 
