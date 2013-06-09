@@ -11,7 +11,7 @@ gem 'sqlite3'
 gem 'gmaps4rails'
 gem 'activeadmin'
 gem "simple_form", "~> 2.1.0"
-
+gem 'ransack'
 
 
 

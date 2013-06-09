@@ -55,10 +55,9 @@ ActiveRecord::Schema.define(:version => 20130604205856) do
   end
 
   create_table "concerts", :force => true do |t|
-    t.date     "fecha"
     t.date     "fec_conc"
-    t.datetime "hora_ini"
-    t.datetime "hora_fin"
+    t.time     "hora_ini"
+    t.time     "hora_fin"
     t.integer  "musical_group_id"
     t.integer  "local_id"
     t.integer  "user_id"
