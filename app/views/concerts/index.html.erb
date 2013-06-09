@@ -1,6 +1,27 @@
 <h1>Listing concerts</h1>
 
-<table>
+<br />
+
+<%= search_form_for @search do |f| %>
+  <%= f.condition_fields do |c| %>
+      <div class="form-inputs">
+        <%= c.attribute_fields do |a| %>
+            <%= a.attribute_select associations: [:musical_group] %>
+        <% end %>
+        <%= c.predicate_select %>
+        <%= c.value_fields do |v| %>
+            <%= v.text_field :value %>
+        <% end %>
+      </div>  
+  <% end %>
+  <div class="form-actions">
+    <%= f.submit "Search"%>
+  </div>
+<% end %>
+
+<br /><br />
+
+<table border="1">
   <tr>
     <th>Name</th>
     <th>Extension</th>
