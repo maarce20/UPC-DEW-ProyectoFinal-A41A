@@ -1,58 +1,28 @@
-<h1>Listing concerts</h1>
 
-<br />
-
-<%= search_form_for @search do |f| %>
-  <%= f.condition_fields do |c| %>
-      <div class="form-inputs">
-        <%= c.attribute_fields do |a| %>
-            <%= a.attribute_select associations: [:musical_group] %>
-        <% end %>
-        <%= c.predicate_select %>
-        <%= c.value_fields do |v| %>
-            <%= v.text_field :value %>
-        <% end %>
-      </div>  
-  <% end %>
-  <div class="form-actions">
-    <%= f.submit "Search"%>
-  </div>
+<div class="wrap-col">
+          <div class="heading"><h2>Listing concerts</h2></div>
+ <% @concerts.each do |concert| %>
+<article class="row">
+            <div class="col-1-3">
+              <div class="wrap-col">
+               <%= image_tag concert.photo_path %>
+              </div>
+            </div>
+            <div class="col-2-3">
+              <div class="wrap-col">
+                <h2><a href="#"><%= concert.name %></a></h2>
+                <div class="info"><table><tr><td>Fecha: </td><td><%= concert.fec_conc %></td></tr>
+                  <tr><td>Hora Inicio: </td><td><%= concert.hora_ini %></td></tr>
+                  <tr><td>Hohra Fin: </td><td><%= concert.hora_fin %></td></tr>
+                  <tr><td>Local: </td><td><%= concert.local.name %></td></tr></table></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor [...]</p>
+              </div>
+            </div>
+</article>
 <% end %>
 
-<br /><br />
+</div>
+</div>
 
-<table border="1">
-  <tr>
-    <th>Name</th>
-    <th>Extension</th>
-    <th>Fec conc</th>
-    <th>Hora ini</th>
-    <th>Hora fin</th>
-    <th>Musical group</th>
-    <th>Local</th>
-    <th>User</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @concerts.each do |concert| %>
-  <tr>
-    <td><%= concert.name %></td>
-    <td><%= concert.extension %></td>
-    <td><%= concert.fec_conc %></td>
-    <td><%= concert.hora_ini %></td>
-    <td><%= concert.hora_fin %></td>
-    <td><%= concert.musical_group.name %></td>
-    <td><%= concert.local.name %></td>
-    <td><%= concert.user.name_user %></td>
-    <td><%= link_to 'Show', concert %></td>
-    <td><%= link_to 'Edit', edit_concert_path(concert) %></td>
-    <td><%= link_to 'Destroy', concert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
 
 <%= link_to 'New Concert', new_concert_path %>
