@@ -1,18 +1,36 @@
+<div class="comment">
 <%= simple_form_for(@concert, html: {multipart: true}) do |f| %>
   <%= f.error_notification %>
   <div class="form-inputs">
-    <%= f.input :fec_conc %>
-    <%= f.input :hora_ini %>
-    <%= f.input :hora_fin %>
-    <%= f.association :musical_group %>
-    <%= f.association :local %>
-    <%= f.association :user, label_method: :name_user, value_method: :id, include_blank: false %>
-    <%= f.input :name %>
+
+    <%= f.label :name, 'Nombre del Concierto' %><br />
+    <%= f.input :name, label: false, input_html: { placeholder: 'Nombre de concierto', required: 'required'} %>
+
+    <%= f.label :fec_conc, 'Fecha de Concierto' %><br />
+    <%= f.input :fec_conc, label: false, input_html: { required: 'required', class: 'input_select' } %>
+
+    <%= f.label :hora_ini, 'Hora de Inicio' %><br />
+    <%= f.input :hora_ini, label: false, input_html: { required: 'required', class: 'input_select' } %>
+
+    <%= f.label :hora_fin, 'Hora de Fin' %><br />
+    <%= f.input :hora_fin, label: false, input_html: { required: 'required', class: 'input_select' } %>
+
+    <%= f.label :musical_group, 'Grupo musical' %><br />
+    <%= f.association :musical_group, label: false, input_html: { class: 'input_select'} %>
+
+    <%= f.label :local, 'Locales' %><br />
+    <%= f.association :local, label: false, input_html: { class: 'input_select'} %>
+    
+    <%= f.label :user, 'Usuario' %><br />
+    <%= f.association :user, label_method: :name_user, value_method: :id, include_blank: false, label: false %>
+
+    
     <%= f.file_field :photo %>
   
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, 'Crear Concierto' %>
   </div>
 <% end %>
+</div>

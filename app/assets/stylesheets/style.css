@@ -178,3 +178,23 @@ footer {margin-top: 15px;}
   float: none;  
   margin: 0;  
 } */
+
+.input_select 
+{
+	border-top: solid 1px #aaa;
+	border-left: solid 1px #aaa;
+	border-bottom: solid 1px #ccc;
+	border-right: solid 1px #ccc;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	outline: 0;
+	vertical-align: middle;
+	position: relative;
+	padding-left: 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	height: 24px;
+	padding:2px;
+}
