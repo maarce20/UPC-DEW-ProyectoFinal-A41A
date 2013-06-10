@@ -1,27 +1,45 @@
-
 <div class="wrap-col">
-          <div class="heading"><h2>Listing concerts</h2></div>
- <% @concerts.each do |concert| %>
-<article class="row">
-            <div class="col-1-3">
-              <div class="wrap-col">
-               <%= image_tag concert.photo_path %>
-              </div>
-            </div>
-            <div class="col-2-3">
-              <div class="wrap-col">
-                <h2><a href="#"><%= concert.name %></a></h2>
-                <div class="info"><table><tr><td>Fecha: </td><td><%= concert.fec_conc %></td></tr>
-                  <tr><td>Hora Inicio: </td><td><%= concert.hora_ini %></td></tr>
-                  <tr><td>Hohra Fin: </td><td><%= concert.hora_fin %></td></tr>
-                  <tr><td>Local: </td><td><%= concert.local.name %></td></tr></table></div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor [...]</p>
-              </div>
-            </div>
-</article>
-<% end %>
+  <div class="heading"><h2>Buscar Conciertos</h2></div>
+  <br />
+    <%= search_form_for @search do |f| %>
+      <%= f.condition_fields do |c| %>
+        <div class="form-inputs">
+          <%= c.attribute_fields do |a| %>
+            <%= a.attribute_select associations: [:musical_group, :local, :district] %>
+          <% end %>
+          <%= c.predicate_select %>
+          <%= c.value_fields do |v| %>
+            <%= v.text_field :value %>
+          <% end %>
+        </div>  
+      <% end %>
+      <div class="form-actions">
+        <%= f.submit "Search"%>
+      </div>
+  <% end %>
 
-</div>
+
+  <div class="heading"><h2>Listado de Conciertos</h2></div>
+  <% @concerts.each do |concert| %>
+  <article class="row">
+    <div class="col-1-3">
+      <div class="wrap-col">
+       <%= image_tag concert.photo_path %>
+     </div>
+   </div>
+   <div class="col-2-3">
+    <div class="wrap-col">
+      <h2><a href="#"><%= concert.name %></a></h2>
+      <div class="info"><table><tr><td>Fecha: </td><td><%= concert.fec_conc %></td></tr>
+        <tr><td>Hora Inicio: </td><td><%= concert.hora_ini %></td></tr>
+        <tr><td>Hohra Fin: </td><td><%= concert.hora_fin %></td></tr>
+        <tr><td>Local: </td><td><%= concert.local.name %></td></tr></table></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor [...]</p>
+      </div>
+    </div>
+  </article>
+  <% end %>
+  </div>
 </div>
 
 
