@@ -1,35 +1,27 @@
-<h1>Listing users</h1>
+<div class="wrap-col">
+  <div class="heading"><h2>Listado de Usuarios</h2></div><br />
+</div>
 <p id="notice"><%= notice %></p>
 <table>
   <tr>
-    <th>Type person</th>
-    <th>Name user</th>
-    <th>Primary last name</th>
-    <th>Second last name</th>
-    <th>Sex</th>
-    <th>Type document</th>
-    <th>Number document</th>
+    <th>Tipo</th>
+    <th>Nombre</th>
+    <th colspan=2>Apellidos</th>
+    <th>Genero</th>
     <th>Email</th>
-    <th>Password</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th colspan=2>Acciones</th>
   </tr>
 
 <% @users.each do |user| %>
   <tr>
     <td><%= user.type_person %></td>
     <td><%= user.name_user %></td>
-    <td><%= user.primary_last_name %></td>
+    <td><%= user.primary_last_name %>&nbsp;&nbsp;</td>
     <td><%= user.second_last_name %></td>
-    <td><%= user.sex %></td>
-    <td><%= user.type_document %></td>
-    <td><%= user.number_document %></td>
+    <td><%= user.gender.name %></td>
     <td><%= user.email %></td>
-    <td><%= user.password %></td>
-    <td><%= link_to 'Show', user %></td>
+    <td><%= link_to 'Show', user %>&nbsp;|&nbsp;</td>
     <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>

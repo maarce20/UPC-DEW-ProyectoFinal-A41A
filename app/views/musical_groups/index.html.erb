@@ -1,9 +1,18 @@
-<h1>Listing musical_groups</h1>
+<div class="block09">
+  <div class="content">
+    <div class="tag"  style="float: right;">
+      <%= link_to '+ Crear Grupo', new_musical_group_path, { :class=>"button_1" } %>
+    </div>
+  </div>
+</div>
+<div class="heading">
+  <h2>Listado de Grupos</h2>
+</div>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Music style</th>
+    <th>Grupo</th>
+    <th>Estilo de Musica</th>
     <th></th>
     <th></th>
     <th></th>
@@ -21,5 +30,3 @@
 </table>
 
 <br />
-
-<%= link_to 'New Musical group', new_musical_group_path %>

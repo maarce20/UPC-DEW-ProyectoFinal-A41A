@@ -8,4 +8,5 @@ class ConcertsController < InheritedResources::Base
 			@search.build_condition
 		}
 	end
+
 end

@@ -1,7 +1,9 @@
 <%= form_for(@musical_group) do |f| %>
   <% if @musical_group.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@musical_group.errors.count, "error") %> prohibited this musical_group from being saved:</h2>
+      <h2>
+        <%= pluralize(@musical_group.errors.count, "error") %> prohibited this musical_group from being saved:
+      </h2>
 
       <ul>
       <% @musical_group.errors.full_messages.each do |msg| %>
