@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>BoomMusic | The way you feel the music</title>
+  
+    <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- CSS
+  ================================================== -->
+  <link rel="stylesheet" href="/assets/zerogrid.css">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/responsive.css">
+  <link rel="stylesheet" href="/assets/responsiveslides.css" />
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/ui-darkness/jquery-ui.min.css" />
+  <!--[if lt IE 8]>
+       <div style=' clear: both; text-align:center; position: relative;'>
+         <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+           <img src="http://storage.ie6countdown.com/assets/100/images/banners/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today." />
+        </a>
+      </div>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    <script src="js/html5.js"></script>
+    <script src="js/css3-mediaqueries.js"></script>
+  <![endif]-->
+  
+  <link href='/assets/favicon.ico' rel='icon' type='image/x-icon'/>
+  <script src="/assets/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+  <script src="/assets/responsiveslides.js"></script>
+  <script>
+    $(function () {
+      $("#slider").responsiveSlides({
+      auto: true,
+      pager: false,
+      nav: true,
+      speed: 500,
+      maxwidth: 962,
+      namespace: "centered-btns"
+      });
+
+      $('#btnLogIn').click(function(e){
+        $("#dlgLogin").dialog("open");
+        e.preventDefault();
+      });
+
+      /*
+        $html = $.ajax({
+              type: "POST",
+              url : "addSpeedDialCode",
+              data : { 
+                    txtCustomerPIN : $('#txtCustomerPIN').val(),
+                    txtSpeedDialCode : $('#txtSpeedDialCode').val(),
+                    txtSpeedDialDestination : $('#txtSpeedDialDestination').val()
+                  }
+        }).done(function(data) {
+        });
+      */
+
+      $("#dlgLogin").dialog({
+        create: function (event, ui) {
+          $(".ui-widget-header").hide();
+        },
+        autoOpen: false,
+        height: 'auto',
+        width: 592,
+        modal: true,
+        resizable: false,
+        buttons: {
+            "Cerrar": function() {
+              alert('Cerrando =(');
+              $(this).dialog('close');
+            }
+        }
+      });
+
+
+
+      $('#btnLogin').click(function(e){
+        $user = $('#txtLogin').val();
+        $pass = $('#txtPassword').val();
+        alert('Usuario : ' + $user + "\n" + "Password : " + $pass);
+        e.preventDefault();
+      });
+
+
+
+    });
+  </script>
+
+  <style type="text/css">
+  *,
+*:after,
+*:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* Demo 2 */
+
+.form-2 {
+    /* Size and position */
+    width: 550px;
+    margin: 60px auto 30px;
+    padding: 15px;
+    position: relative;
+
+    /* Styles */
+    background: #fffaf6;
+    border-radius: 4px;
+    color: #7e7975;
+    box-shadow:
+        0 2px 2px rgba(0,0,0,0.2),        
+        0 1px 5px rgba(0,0,0,0.2),        
+        0 0 0 12px rgba(255,255,255,0.4); 
+}
+
+.form-2 h1 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #bdb5aa;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #EBE6E2;
+    text-shadow: 0 2px 0 rgba(255,255,255,0.8);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.8);
+}
+
+.form-2 h1 .log-in,
+.form-2 h1 .sign-up {
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.form-2 h1 .log-in {
+    color: #6c6763;
+    padding-right: 2px;
+}
+
+.form-2 h1 .sign-up {
+    color: #ffb347;
+    padding-left: 2px;
+}
+
+.form-2 .float {
+    width: 50%;
+    float: left;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,1);
+}
+
+.form-2 .float:first-of-type {
+    padding-right: 5px;
+}
+
+.form-2 .float:last-of-type {
+    padding-left: 5px;
+}
+
+.form-2 label {
+    display: block;
+    padding: 0 0 5px 2px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+    font-size: 11px;
+}
+
+.form-2 label i {
+    margin-right: 5px; /* Gap between icon and text */
+    display: inline-block;
+    width: 10px;
+}
+
+.form-2 input[type=text],
+.form-2 input[type=password] {
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 5px;
+    border: 3px solid #ebe6e2;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.form-2 input[type=text]:hover,
+.form-2 input[type=password]:hover {
+    border-color: #CCC;
+}
+
+.form-2 label:hover ~ input {
+    border-color: #CCC;
+}
+
+.form-2 input[type=text]:focus,
+.form-2 input[type=password]:focus {
+    border-color: #BBB;
+    outline: none; /* Remove Chrome's outline */
+}
+
+.form-2 input[type=submit],
+.form-2 .log-twitter {
+    /* Size and position */
+    width: 49%;
+    height: 38px;
+    float: left;
+    position: relative;
+
+    /* Styles */
+    box-shadow: inset 0 1px rgba(255,255,255,0.3);
+    border-radius: 3px;
+    cursor: pointer;
+
+    /* Font styles */
+    font-family: 'Lato', Calibri, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 38px; /* Same as height */
+    text-align: center;
+    font-weight: bold;
+}
+
+.form-2 input[type=submit] {
+    margin-left: 1%;
+    background: #fbd568; /* Fallback */
+    background: -moz-linear-gradient(#fbd568, #ffb347);
+    background: -ms-linear-gradient(#fbd568, #ffb347);
+    background: -o-linear-gradient(#fbd568, #ffb347);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#fbd568), to(#ffb347));
+    background: -webkit-linear-gradient(#fbd568, #ffb347);
+    background: linear-gradient(#fbd568, #ffb347);
+    border: 1px solid #f4ab4c;
+    color: #996319;
+    text-shadow: 0 1px rgba(255,255,255,0.3);
+}
+
+.form-2 .log-twitter {
+    margin-right: 1%;
+    background: #34a5cf; /* Fallback */
+    background: -moz-linear-gradient(#34a5cf, #2a8ac4);
+    background: -ms-linear-gradient(#34a5cf, #2a8ac4);
+    background: -o-linear-gradient(#34a5cf, #2a8ac4);
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(#34a5cf), to(#2a8ac4));
+    background: -webkit-linear-gradient(#34a5cf, #2a8ac4);
+    background: linear-gradient(#34a5cf, #2a8ac4);
+    border: 1px solid #2b8bc7;
+    color: #ffffff;
+    text-shadow: 0 -1px rgba(0,0,0,0.3);
+    text-decoration: none;
+}
+
+.form-2 input[type=submit]:hover,
+.form-2 .log-twitter:hover {
+    box-shadow: 
+        inset 0 1px rgba(255,255,255,0.3), 
+        inset 0 20px 40px rgba(255,255,255,0.15);
+}
+
+.form-2 input[type=submit]:active,
+.form-2 .log-twitter:active{
+    top: 1px;
+}
+
+/* Fallback fro broswers that don't support box shadows */
+.no-boxshadow .form-2 input[type=submit]:hover {
+    background: #ffb347;
+}
+
+.no-boxshadow .form-2 .log-twitter:hover {
+    background: #2a8ac4;
+}
+
+.form-2 p:last-of-type {
+    clear: both;    
+}
+
+.form-2 .opt {
+    text-align: right;
+    margin-right: 3px;
+}
+
+.form-2 label[for=showPassword] {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 11px;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+.form-2 input[type=checkbox] {
+    vertical-align: middle;
+    margin: -1px 5px 0 1px;
+}
+
+
+  </style>
+
+
+
+
+</head>
+<body>
+<!--------------Header------------- -->
+<header>
+  <div class="wrap-header zerogrid">
+    <div id="logo"><a href="#"><img src="/assets/logo2.png"/></a></div>
+    <div id="search">
+      <div class="block09">
+        <div class="content">
+        <div class="tag">
+          <a href="users/new">SIGN IN</a>
+        </div>
+        <div class="tag">
+          <a id="btnLogIn" href="#">Log In</a>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap-nav zerogrid">
+    <div class="menu">
+      <ul>
+        <li class="current">
+          <%= link_to 'Home', '/welcome/index/' %>
+        </li>
+        <li>
+          <%= link_to 'Usuario', users_path %>
+        </li>
+        <li>
+          <%= link_to 'Grupos', musical_groups_path %>
+        </li>
+        <li>
+          <%= link_to 'Conciertos', concerts_path %>
+        </li>
+      </ul>
+    </div>
+    
+    <div class="minimenu"><div>MENU</div>
+      <select onchange="location=this.value">
+        <option></option>
+        <option value="index.html">Home</option>
+        <option value="blog.html">Blog</option>
+        <option value="gallery.html">Gallery</option>
+        <option value="single.html">About</option>
+        <option value="contact.html">Contact</option>
+      </select>
+    </div>    
+  </div>
+</nav>
+
+<div class="featured">
+  <div class="wrap-featured zerogrid">
+    <div class="slider">
+      <div class="rslides_container">
+        <ul class="rslides" id="slider">
+          <li><img src="/assets/slide1.png"/></li>
+          <li><img src="/assets/slide2.png"/></li>
+          <li><img src="/assets/slide3.png"/></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--------------Content------------- -->
+<section id="content">
+  <div class="wrap-content zerogrid">
+    <div class="row block01">
+      <div class="col-1-3">
+        <div class="wrap-col box">
+          <h2>The White Night</h2>
+          <p>Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis.</p>
+          <div class="more"><a href="#">[...]</a></div>
+        </div>
+      </div>
+      <div class="col-1-3">
+        <div class="wrap-col box">
+          <h2>Tons of Fans</h2>
+          <p>Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis.</p>
+          <div class="more"><a href="#">[...]</a></div>
+        </div>
+      </div>
+      <div class="col-1-3">
+        <div class="wrap-col box">
+          <h2>Best DJ's Ever</h2>
+          <p>Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis.</p>
+          <div class="more"><a href="#">[...]</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="row block02">
+      <div class="col-2-3">
+        <div class="wrap-col">
+          <div class="heading"><h2>Latest Blog</h2></div>
+          <article class="row">
+            <div class="col-1-3">
+              <div class="wrap-col">
+                <img src="/assets/img1.png"/>
+              </div>
+            </div>
+            <div class="col-2-3">
+              <div class="wrap-col">
+                <h2><a href="#">Dreaming With Us All Night</a></h2>
+                <div class="info">By Admin on December 01, 2012 with <a href="#">01 Commnets</a></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor [...]</p>
+              </div>
+            </div>
+          </article>
+          <article class="row">
+            <div class="col-1-3">
+              <div class="wrap-col">
+                <img src="/assets/img2.png"/>
+              </div>
+            </div>
+            <div class="col-2-3">
+              <div class="wrap-col">
+                <h2><a href="#">Welcome To Our Great Site</a></h2>
+                <div class="info">By Admin on December 01, 2012 with <a href="#">01 Commnets</a></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor [...]</p>
+              </div>
+            </div>
+          </article>
+          <article class="row">
+            <div class="col-1-3">
+              <div class="wrap-col">
+                <img src="/assets/img3.png"/>
+              </div>
+            </div>
+            <div class="col-2-3">
+              <div class="wrap-col">
+                <h2><a href="#">Stereosonic Is Back Just For You</a></h2>
+                <div class="info">By Admin on December 01, 2012 with <a href="#">01 Commnets</a></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor [...]</p>
+              </div>
+            </div>
+          </article>
+          <article class="row">
+            <div class="col-1-3">
+              <div class="wrap-col">
+                <img src="/assets/img4.png"/>
+              </div>
+            </div>
+            <div class="col-2-3">
+              <div class="wrap-col">
+                <h2><a href="#">Club Galaxy White Night Show</a></h2>
+                <div class="info">By Admin on December 01, 2012 with <a href="#">01 Commnets</a></div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor [...]</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="col-1-3">
+        <div class="wrap-col">
+          <div class="box">
+            <div class="heading"><h2>Latest Albums</h2></div>
+            <div class="content">
+              <img src="/assets/albums.png"/>
+            </div>
+          </div>
+          <div class="box">
+            <div class="heading"><h2>Upcoming Events</h2></div>
+            <div class="content">
+              <div class="list">
+                <ul>
+                  <li><a href="#">Magic Island Ibiza</a></li>
+                  <li><a href="#">Bamboo Is Just For You</a></li>
+                  <li><a href="#">Every Hot Summer</a></li>
+                  <li><a href="#">Magic Island Ibiza</a></li>
+                  <li><a href="#">Bamboo Is Just For You</a></li>
+                  <li><a href="#">Every Hot Summer</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--------------Footer------------- -->
+<footer>
+  <div class="wrap-footer zerogrid">
+    <div class="row block09">
+      <div class="col-1-4">
+        <div class="wrap-col">
+          <div class="box">
+            <div class="heading"><h2>About Us</h2></div>
+            <div class="content">
+              <p>Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis natoque penatibus.</p>
+              <p>Fusce suscipit varius mi. Cum sociis natoque penatibus et magnis dis natoque penatibus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-1-4">
+        <div class="wrap-col">
+          <div class="box">
+            <div class="heading"><h2>Latest Post</h2></div>
+            <div class="content">
+              <ul>
+                <li><a href="#">Magic Island Ibiza</a></li>
+                <li><a href="#">Bamboo Is Just For You</a></li>
+                <li><a href="#">Every Hot Summer</a></li>
+                <li><a href="#">Magic Island Ibiza</a></li>
+                <li><a href="#">Bamboo Is Just For You</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-1-4">
+        <div class="wrap-col">
+          <div class="box">
+            <div class="heading"><h2>Hot Albums</h2></div>
+            <div class="content">
+              <div class="tag">
+                <a href="#">Galaxy</a><a href="#">Beatport</a><a href="#">Amazon</a><a href="#">Itunes</a><a href="#">Sonic</a><a href="#">Kpopps</a><a href="#">Summer</a><a href="#">Magical</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-1-4">
+        <div class="wrap-col">
+          <div class="box">
+            <div class="heading"><h2>Contact Us</h2></div>
+            <div class="content">
+              <ul>
+                <li>Address : 0123 Some Street. Country</li>
+                <li>Phone : 000.000.000.000</li>
+                <li>Email : admin@zerotheme.com</li>
+                <li>Website : www.zerotheme.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DIALOGO LOGIN -->
+    <div id="dlgLogin" style="display: none;" >
+      <div class="container">     
+        <section class="main">
+          <form class="form-2">
+            <h1><span class="log-in">Log in</span> or <span class="sign-up">sign up</span></h1>
+            <p class="float">
+              <label for="login"><i class="icon-user"></i>Username</label>
+              <input id="txtLogin" type="text" name="login" placeholder="Username or email">
+            </p>
+            <p class="float">
+              <label for="password"><i class="icon-lock"></i>Password</label>
+              <input id="txtPassword" type="password" name="password" placeholder="Password" class="showpassword">
+            </p>
+            <p>&nbsp;</p>
+            <p class="clearfix"> 
+                <a href="#" class="log-twitter">Log in with Facebook</a>    
+                <input type="submit" id="btnLogin" name="submit" value="Log in">
+              </p>
+            </form>​​
+          </section>
+        </div>
+      </div>
+      <!-- DIALOGO -->
+    
+    <div class="row copyright">
+      <p>Copyright © 2013 - <a href="http://www.zerotheme.com" target="_blank">Free Html5 Templates</a> and <a href="http://www.zerotheme.com" target="_blank">Free Responsive Templates</a> by Zerotheme.com</p>
+    </div>
+  </div>
+</footer>
+
+</body></html>
