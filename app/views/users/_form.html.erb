@@ -28,7 +28,7 @@
   <%= f.input :second_last_name, label: false, input_html: { placeholder: 'Ingrese Apellido Materno' } %>
 
   <%= f.label :sex, 'Genero' %><br />
-  <%= f.association :gender, label: false %>
+  <%= f.association :gender, label: false, input_html: { class: 'input_select_form'} %>
 
   <%= f.label :type_document, 'Tipo de Documento' %><br />
   <%= f.select :type_document, options_for_select([["DNI","DNI"],["TIU","TIU"]]) %><br /><br />

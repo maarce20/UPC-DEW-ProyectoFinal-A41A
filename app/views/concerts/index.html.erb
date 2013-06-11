@@ -1,6 +1,14 @@
+<div class="block09">
+  <div class="content">
+    <div class="tag"  style="float: right;">
+      <%= link_to '+ Crear Concierto', new_concert_path, { :class=>"button_1" } %>
+    </div>
+  </div>
+</div>
+
 <div class="wrap-col">
-  <div class="heading"><h2>Buscar Conciertos</h2></div>
-  <br />
+  <div class="heading"><h2>Buscar Conciertos</h2></div><br />
+  
     <%= search_form_for @search do |f| %>
       <%= f.condition_fields do |c| %>
         <div class="form-inputs">
@@ -16,31 +24,41 @@
       <div class="form-actions">
         <%= f.submit "Search"%>
       </div>
+    <% end %>
+
+  <br />
+  <div class="heading"><h2>Listado de Conciertos</h2></div>
+
+  <% if @total = 0 %>
+    <%= link_to 'No existen conciertos aun, se el primero en crear uno! :)', new_concert_path %>
   <% end %>
 
 
-  <div class="heading"><h2>Listado de Conciertos</h2></div>
   <% @concerts.each do |concert| %>
-  <article class="row">
-    <div class="col-1-3">
-      <div class="wrap-col">
-       <%= image_tag concert.photo_path %>
-     </div>
-   </div>
-   <div class="col-2-3">
-    <div class="wrap-col">
-      <h2><a href="#"><%= concert.name %></a></h2>
-      <div class="info"><table><tr><td>Fecha: </td><td><%= concert.fec_conc %></td></tr>
-        <tr><td>Hora Inicio: </td><td><%= concert.hora_ini %></td></tr>
-        <tr><td>Hohra Fin: </td><td><%= concert.hora_fin %></td></tr>
-        <tr><td>Local: </td><td><%= concert.local.name %></td></tr></table></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor [...]</p>
+    <article class="row">
+      <div class="col-1-3">
+        <div class="wrap-col">
+          <%= image_tag concert.photo_path %>
+        </div>
       </div>
-    </div>
-  </article>
+      <div class="col-2-3">
+        <div class="wrap-col">
+          <h2><a href="#"><%= concert.name %></a></h2>
+          <div class="info">
+            <table>
+              <tr><td>Fecha: </td><td><%= concert.fec_conc %></td></tr>
+              <tr><td>Hora Inicio: </td><td><%= concert.hora_ini %></td></tr>
+              <tr><td>Hohra Fin: </td><td><%= concert.hora_fin %></td></tr>
+              <tr><td>Local: </td><td><%= concert.local.name %></td></tr>
+            </table>
+          </div>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor [...]</p>
+        </div>
+      </div>
+    </article>
   <% end %>
   </div>
 </div>
 
 
-<%= link_to 'New Concert', new_concert_path %>
+

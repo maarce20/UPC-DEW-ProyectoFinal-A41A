@@ -1,0 +1,15 @@
+/****** Estilos para los Formularios *****/
+.input_select_form {
+	width: 250px;
+	border: 1px solid #cccccc;
+	height: 36px;
+	cursor: pointer;
+}
+
+.button_1 {
+	position: relative;
+	float: right;
+	padding: 6px 5px 0px 5px;
+	margin: 17px;
+	color: white;
+}
