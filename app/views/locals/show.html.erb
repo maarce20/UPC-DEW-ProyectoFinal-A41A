@@ -1,26 +1,26 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>Nombre:</b>
   <%= @local.name %>
 </p>
 
 <p>
-  <b>Address:</b>
+  <b>Direccion:</b>
   <%= @local.address %>
 </p>
 
 <p>
-  <b>District:</b>
+  <b>Distrito:</b>
   <%= @local.district.name %>
 </p>
 
 <p>
-  <b>Phone:</b>
+  <b>Telefono:</b>
   <%= @local.phone %>
 </p>
 
-<p>
+<!--<p>
   <b>Longitude:</b>
   <%= @local.longitude %>
 </p>
@@ -33,8 +33,15 @@
 <p>
   <b>Gmaps:</b>
   <%= @local.gmaps %>
-</p>
+</p>-->
 
+<div class="block09">
+  <div class="content">
+    <div class="tag"  style="float: right;">
+      <%= link_to '+ Lista Locales', locals_path, { :class=>"button_1" } %>
+      
+    </div>
+  </div>
+</div>
 
-<%= link_to 'Editar', edit_local_path(@local) %> |
-<%= link_to 'Listado de Locales', locals_path %>
+<!--<%= link_to 'Listado de Locales', locals_path %>-->
