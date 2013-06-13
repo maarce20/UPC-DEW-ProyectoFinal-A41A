@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130608232204) do
+ActiveRecord::Schema.define(:version => 20130613164712) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -65,6 +65,7 @@ ActiveRecord::Schema.define(:version => 20130608232204) do
     t.datetime "updated_at",       :null => false
     t.string   "extension"
     t.string   "name"
+    t.text     "details"
   end
 
   add_index "concerts", ["local_id"], :name => "index_concerts_on_local_id"

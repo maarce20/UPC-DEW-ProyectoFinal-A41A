@@ -3,7 +3,7 @@ class Concert < ActiveRecord::Base
   belongs_to :musical_group
   belongs_to :local
   belongs_to :user
-    attr_accessible :musical_group_id, :local_id, :user_id, :fec_conc, :hora_fin, :hora_ini, :name, :photo
+    attr_accessible :musical_group_id, :local_id, :user_id, :fec_conc, :hora_fin, :hora_ini, :name, :photo, :details
 
   #Validates
   validates_presence_of :musical_group, :on => :create

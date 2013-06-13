@@ -26,6 +26,10 @@
 
     
     <%= f.file_field :photo %>
+  </br>
+
+    <%= f.label :details, 'Detalles del Concierto' %><br />
+    <%= f.input :details, label: false, input_html: { placeholder: 'Detalles del concierto', required: 'required'} %>
   
   </div>
 
