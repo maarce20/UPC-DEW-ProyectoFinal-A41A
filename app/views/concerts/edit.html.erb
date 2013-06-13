@@ -1,6 +1,16 @@
-<h1>Editing concert</h1>
-
+<div class="heading">
+	<h2>Editar Conciertos</h2>
+</div>
+<td style='width:50px;'>
+<div class="block09">
+  <div class="content">
+    <div class="tag"  style="float: right;">
+      <%= link_to 'Atras', concerts_path, { :class=>"button_1" } %>
+      
+    </div>
+  </div>
+</div>
 <%= render 'form' %>
 
-<%= link_to 'Show', @concert %> |
-<%= link_to 'Back', concerts_path %>
+<!--<%= link_to 'Show', @concert %> |
+<%= link_to 'Back', concerts_path %>-->

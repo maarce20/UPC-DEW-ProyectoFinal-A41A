@@ -9,7 +9,14 @@
   <b>Music style:</b>
   <%= @musical_group.music_style.name %>
 </p>
+<div class="block09">
+  <div class="content">
+    <div class="tag"  style="float: right;">
+      <%= link_to 'Atras', musical_groups_path, { :class=>"button_1" } %>
+      
+    </div>
+  </div>
+</div>
 
-
-<%= link_to 'Edit', edit_musical_group_path(@musical_group) %> |
-<%= link_to 'Back', musical_groups_path %>
+<!--<%= link_to 'Edit', edit_musical_group_path(@musical_group) %> |
+<%= link_to 'Back', musical_groups_path %>-->
