@@ -1,9 +1,5 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @concert.fec_conc %>
-</p>
+<div class="heading"><h2><%= @concert.name %></h2></div>
 
 <p>
   <b>Fecha del Concierto:</b>
@@ -41,9 +37,7 @@
 </p>
 
 <p>
-
   <%= image_tag @concert.photo_path %>
-
 </p>
 
 
