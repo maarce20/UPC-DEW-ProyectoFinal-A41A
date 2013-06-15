@@ -1,4 +1,10 @@
 Proyfinal::Application.routes.draw do
+  get "user_sessions/new"
+
+  get "user_sessions/create"
+
+  get "user_sessions/destroy"
+
   get '/welcome/index'
   root :to => 'welcome#index'
 
@@ -29,6 +35,12 @@ Proyfinal::Application.routes.draw do
   resources :locals
 
   resources :concerts
+  resources :user_sessions
+
+  match 'login' => 'user_sessions#new', :as => :login
+  match 'logout' => 'user_sessions#destroy', :as => :logout
+
+
 
 
   # The priority is based upon order of creation:

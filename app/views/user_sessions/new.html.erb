@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+      <div class="container">     
+        <section class="main">
+          
+          <%= form_tag user_sessions_path, :method => :post, :class => 'form-2' do %>
+            <h1><span class="log-in">Log in</span> or <span class="sign-up">sign up</span></h1>
+            <p class="float">
+              <label for="login"><i class="icon-user"></i>Username</label>
+           
+              <%= text_field_tag :username %>
+            </p>
+            <p class="float">
+              <label for="password"><i class="icon-lock"></i>Password</label>
+              
+              <%= password_field_tag :password %>
+            </p>
+            <p>&nbsp;</p>
+            <p class="clearfix"> 
+                <a href="#" class="log-twitter">Log in with Facebook</a>    
+                
+                <%= submit_tag "Login" %>
+              </p>
+           
+            <% end %>
+          </section>
+        </div>
+     
