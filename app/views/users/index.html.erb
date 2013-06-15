@@ -9,7 +9,7 @@
     <th colspan=2>Apellidos</th>
     <th>Genero</th>
     <th>Email</th>
-    <th colspan=2>Acciones</th>
+    <th colspan=1>Acciones</th>
   </tr>
 
 <% @users.each do |user| %>
@@ -21,7 +21,7 @@
     <td><%= user.gender.name %></td>
     <td><%= user.email %></td>
     <td><%= link_to 'Show', user %>&nbsp;|&nbsp;</td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
+    
   </tr>
 <% end %>
 </table>

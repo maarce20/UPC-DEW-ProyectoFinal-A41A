@@ -1,5 +1,5 @@
 class ConcertsController < InheritedResources::Base
-	before_filter :require_login, :only => [:index, :new, :create]
+	before_filter :require_login, :only => [:new, :create]
 
 	def index
 		index!{
